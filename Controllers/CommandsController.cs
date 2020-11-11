@@ -11,9 +11,9 @@ namespace CommandAPI.Controllers
     [ApiController]
     public class CommandsController : ControllerBase
     {
-        private readonly ICommanderRepo _repository;
+        private readonly ICommandAPIRepo _repository;
 
-        public CommandsController(ICommanderRepo repository)
+        public CommandsController(ICommandAPIRepo repository)
         {
             _repository = repository;
         }

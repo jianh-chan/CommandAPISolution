@@ -3,7 +3,7 @@ using CommandAPI.Models;
 
 namespace CommandAPI.Data
 {
-    public class MockCommanderRepo : ICommanderRepo
+    public class MockCommandAPIRepo : ICommandAPIRepo
     {
         public IEnumerable<Command> GetAppCommands()
         {
