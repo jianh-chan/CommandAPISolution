@@ -5,7 +5,7 @@ namespace CommandAPI.Data
 {
     public class MockCommandAPIRepo : ICommandAPIRepo
     {
-        public IEnumerable<Command> GetAppCommands()
+        public IEnumerable<Command> GetAllCommands()
         {
             var commands = new List<Command>
             {
@@ -21,5 +21,24 @@ namespace CommandAPI.Data
         {
             return new Command{Id=0, HowTo="Boil and egg", Line="Boil water", Platform="Kettle and pan"};
         }
+        public void CreateCommand(Command cmd)
+        {
+            throw new System.NotImplementedException();
+        }
+        
+        public void UpdateCommand(Command cmd)
+        {
+            throw new System.NotImplementedException();
+        }
+        public void DeleteCommand(Command cmd)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
+
     }
 }
