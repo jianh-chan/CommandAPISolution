@@ -34,6 +34,7 @@ namespace CommandAPI
 
             services.AddControllers();
 
+            // Registers our DBContext class in ConfigureServices and points the class to the connection string in appsettings.json
             services.AddDbContext<CommandContext>(opt => opt.UseNpgsql(builder.ConnectionString));
 
             services.AddScoped<ICommandAPIRepo, SqlCommandAPIRepo>();
