@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using AutoMapper;
+using Newtonsoft.Json.Serialization;
 
 namespace CommandAPI
 {
@@ -33,7 +34,9 @@ namespace CommandAPI
             builder.Username = Configuration["UserID"];
             builder.Password = Configuration["Password"];
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s => {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
 
             // Registers our DBContext class in ConfigureServices and points the class to the connection string in appsettings.json
             services.AddDbContext<CommandContext>(opt => opt.UseNpgsql(builder.ConnectionString));
