@@ -9,6 +9,7 @@ namespace CommandAPI.Data
     {
         private readonly CommandContext _context;
 
+        // Inject our DB Context into this concrete class
         public SqlCommandAPIRepo(CommandContext context)
         {
             _context = context;
