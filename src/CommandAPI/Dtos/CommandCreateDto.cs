@@ -8,7 +8,7 @@ namespace CommandAPI.Dtos
         [MaxLength(250)]
         public string HowTo { get; set; }
         
-        // [Required]
+        [Required]
         public string Platform { get; set; }
 
         [Required]
